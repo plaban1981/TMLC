@@ -38,20 +38,20 @@ num_cols = ["hospital_id", "age","bmi","elective_surgery","ethnicity","gender","
 image_path = "medical1.jpg"
 image = Image.open(image_path)
 features = num_cols + cat_cols
-sc_path = r"Model/standardscaler.bin"
+sc_path = r"Model/standardbscaler.bin"
 sc = load(sc_path)
 
 st.set_page_config(page_title="Patient Survival Detection App",
                    page_icon="⚕️", layout="centered")
 
-st.image(image, caption='Road Safety Management')
+st.image(image, caption='Detecting Survival Chances of the patient')
 
 # page header
-st.title(f"Accident Severity Prediction App")
+st.title(f"Patient Survival Detection")
  
 with st.form("Prediction_form"):
     # form header
-    st.header("Enter the feature specifications contributing to the accident:")
+    st.header("Enter the below mentioned details in order for the App to detect the survival of the patient:")
     # input elements
     age =  st.slider('Select age : ',min_value=16.0, max_value=89.0)
     bmi = st.slider('Select body mass index of the person on unit admission : ',min_value=14.84, max_value=67.81)
@@ -144,7 +144,7 @@ with st.form("Prediction_form"):
     aids = st.slider('Select Whether the patient has a definitive diagnosis of acquired immune deficiency syndrome (AIDS) (not HIV positive alone) : ',min_value=0.0, max_value=1.0)
     cirrhosis = st.slider('Select Whether the patient has a history of heavy alcohol use with portal hypertension and varices : ',min_value=0.0, max_value=1.0)
     diabetes_mellitus = st.slider('Select Whether the patient has been diagnosed with diabetes, either juvenile or adult onset, which requires medication : ',min_value=0.0, max_value=1.0)
-    hepatic_failure = st.slider('Select weight of the person on unit admission : ',min_value=0.0, max_value=1.0)
+    hepatic_failure = st.slider('Select Whether the patient hd a hepatic failure while admission : ',min_value=0.0, max_value=1.0)
     immunosuppression = st.slider('Select the patient has their immune system suppressed within six months prior to ICU admission : ',min_value=0.0, max_value=1.0)
     leukemia = st.slider('Select Whether the patient has been diagnosed with acute or chronic myelogenous leukemia, acute or chronic lymphocytic leukemia, or multiple myeloma : ',min_value=0.0, max_value=1.0)
     lymphoma = st.slider('Select Whether the patient has been diagnosed with non-Hodgkin lymphoma : ',min_value=0.0, max_value=1.0)
