@@ -38,7 +38,7 @@ num_cols = ["hospital_id", "age","bmi","elective_surgery","ethnicity","gender","
 image_path = "medical1.jpg"
 image = Image.open(image_path)
 features = num_cols + cat_cols
-sc_path = r"Model/standardbscaler.bin"
+sc_path = r"Model/standardscaler.bin"
 sc = load(sc_path)
 
 st.set_page_config(page_title="Patient Survival Detection App",
